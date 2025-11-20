@@ -1,0 +1,159 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Towards Faster, Smarter, and Simpler Digital Experiences.",
+    "description": "Sirbit team builds websites, mobile apps, and integrated systems using Laravel, Vue, React, Flutter, WordPress.",
+    "startProject": "Start Your Project",
+    "viewWork": "View Our Work"
+  },
+  "whoIsSirbit": {
+    "title": "Who is Sirbit?",
+    "description": "Sirbit is a technical team specialized in building integrated digital solutions. We focus on speed, quality, and clean code.",
+    "vision": "Vision",
+    "technology": "Technology",
+    "trust": "Trust"
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "We provide integrated technical solutions for your digital project",
+    "web": {
+      "title": "Web Development",
+      "description": "Building fast and secure websites and systems using the latest technologies",
+      "learnMore": "Learn More"
+    },
+    "mobile": {
+      "title": "Flutter Mobile Apps",
+      "description": "High-performance iOS/Android apps with excellent user experience",
+      "learnMore": "Learn More"
+    },
+    "wordpress": {
+      "title": "WordPress Sites",
+      "description": "Professional corporate sites and landing pages",
+      "learnMore": "Learn More"
+    }
+  },
+  "whySirbit": {
+    "title": "Why Sirbit?",
+    "cleanCode": "Clean and Scalable Code",
+    "highPerformance": "High Performance",
+    "modernUI": "Simple and Modern Interfaces",
+    "fullExperience": "Complete Experience from Idea to Delivery"
+  },
+  "featuredWork": {
+    "title": "Featured Work",
+    "viewDetails": "View Details",
+    "web": "Web",
+    "mobile": "Mobile",
+    "wordpress": "WordPress"
+  },
+  "techStack": {
+    "title": "Technologies We Use"
+  },
+  "cta": {
+    "title": "Ready to Start Your Project with Us?",
+    "description": "Let's turn your idea into a digital reality",
+    "button": "Contact Us Now"
+  },
+  "footer": {
+    "about": "Sirbit is a technical team specialized in building integrated digital solutions",
+    "quickLinks": "Quick Links",
+    "rights": "© All Rights Reserved"
+  },
+  "servicesPage": {
+    "title": "Our Services",
+    "description": "We provide a comprehensive range of technical services to achieve your digital vision",
+    "webDevelopment": {
+      "title": "Web Development & Systems",
+      "description": "We build advanced web solutions using the latest technologies and frameworks",
+      "features": [
+        "Professional Corporate Websites",
+        "Advanced Management Systems",
+        "Interactive Dashboards",
+        "Advanced API Development"
+      ],
+      "button": "Start This Service"
+    },
+    "mobileDevelopment": {
+      "title": "Flutter Mobile Apps",
+      "description": "High-performance mobile apps for iOS and Android",
+      "features": [
+        "Cross Platform Apps",
+        "Push Notifications",
+        "Authentication & Security",
+        "Backend Control Panel"
+      ],
+      "button": "Start This Service"
+    },
+    "wordpressDevelopment": {
+      "title": "WordPress Sites",
+      "description": "Professional WordPress sites that are fast and easy to manage",
+      "features": [
+        "Corporate and Business Sites",
+        "Landing Pages",
+        "Full Content Control",
+        "Performance Optimization"
+      ],
+      "button": "Start This Service"
+    }
+  },
+  "portfolioPage": {
+    "title": "Sirbit Portfolio",
+    "description": "Explore our successful projects",
+    "filters": {
+      "all": "All",
+      "web": "Web",
+      "mobile": "Mobile",
+      "wordpress": "WordPress"
+    }
+  },
+  "aboutPage": {
+    "title": "About Us",
+    "description": "Sirbit is a passionate technical team building digital solutions that make a real difference",
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be the first choice for companies seeking digital excellence"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "Providing innovative technical solutions that help our clients grow and evolve"
+    },
+    "values": {
+      "title": "Our Values",
+      "description": "Quality, innovation, and transparency in everything we do"
+    },
+    "howWeWork": {
+      "title": "How We Work",
+      "discovery": "Discovery",
+      "analysis": "Analysis",
+      "design": "Design",
+      "development": "Development",
+      "testing": "Testing",
+      "delivery": "Delivery & Support"
+    }
+  },
+  "contactPage": {
+    "title": "Let's Start Your Next Project",
+    "description": "We respond within 24 hours",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "serviceType": "Service Type",
+      "budget": "Budget (Optional)",
+      "message": "Project Description",
+      "submit": "Submit"
+    },
+    "info": {
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "location": "Location"
+    }
+  }
+}
+

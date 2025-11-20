@@ -1,0 +1,159 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "services": "الخدمات",
+    "portfolio": "الأعمال",
+    "about": "من نحن",
+    "contact": "تواصل معنا"
+  },
+  "hero": {
+    "title": "نحو تجارب رقمية أسرع، أذكى، وأبسط.",
+    "description": "فريق Sirbit يبني مواقع، تطبيقات، وأنظمة متكاملة باستخدام Laravel, Vue, React, Flutter, WordPress.",
+    "startProject": "ابدأ مشروعك",
+    "viewWork": "شاهد أعمالنا"
+  },
+  "whoIsSirbit": {
+    "title": "من هو Sirbit؟",
+    "description": "Sirbit فريق تقني متخصص في بناء الحلول الرقمية المتكاملة. نركز على السرعة، الجودة، والكود النظيف.",
+    "vision": "رؤية",
+    "technology": "تقنية",
+    "trust": "ثقة"
+  },
+  "services": {
+    "title": "خدماتنا",
+    "description": "نقدم حلول تقنية متكاملة لمشروعك الرقمي",
+    "web": {
+      "title": "تطوير مواقع ويب",
+      "description": "بناء مواقع وأنظمة سريعة وآمنة باستخدام أحدث التقنيات",
+      "learnMore": "اعرف المزيد"
+    },
+    "mobile": {
+      "title": "تطبيقات موبايل Flutter",
+      "description": "تطبيقات iOS/Android بأداء عالي وتجربة مستخدم ممتازة",
+      "learnMore": "اعرف المزيد"
+    },
+    "wordpress": {
+      "title": "مواقع WordPress",
+      "description": "مواقع تعريفية وصفحات هبوط احترافية",
+      "learnMore": "اعرف المزيد"
+    }
+  },
+  "whySirbit": {
+    "title": "لماذا Sirbit؟",
+    "cleanCode": "كود نظيف وقابل للتطوير",
+    "highPerformance": "أداء عالي",
+    "modernUI": "واجهات بسيطة وحديثة",
+    "fullExperience": "تجربة كاملة من الفكرة إلى التسليم"
+  },
+  "featuredWork": {
+    "title": "أعمالنا المميزة",
+    "viewDetails": "عرض التفاصيل",
+    "web": "ويب",
+    "mobile": "موبايل",
+    "wordpress": "WordPress"
+  },
+  "techStack": {
+    "title": "التقنيات التي نستخدمها"
+  },
+  "cta": {
+    "title": "جاهز لبدء مشروعك معنا؟",
+    "description": "دعنا نحول فكرتك إلى واقع رقمي",
+    "button": "تواصل معنا الآن"
+  },
+  "footer": {
+    "about": "Sirbit فريق تقني متخصص في بناء الحلول الرقمية المتكاملة",
+    "quickLinks": "روابط سريعة",
+    "rights": "© جميع الحقوق محفوظة"
+  },
+  "servicesPage": {
+    "title": "خدماتنا",
+    "description": "نقدم مجموعة شاملة من الخدمات التقنية لتحقيق رؤيتك الرقمية",
+    "webDevelopment": {
+      "title": "تطوير مواقع وأنظمة ويب",
+      "description": "نبني حلول ويب متطورة باستخدام أحدث التقنيات والأطر البرمجية",
+      "features": [
+        "مواقع شركات احترافية",
+        "أنظمة إدارة متقدمة",
+        "لوحات تحكم تفاعلية",
+        "تطوير APIs متقدمة"
+      ],
+      "button": "ابدأ هذه الخدمة"
+    },
+    "mobileDevelopment": {
+      "title": "تطبيقات موبايل Flutter",
+      "description": "تطبيقات موبايل عالية الأداء لنظامي iOS و Android",
+      "features": [
+        "تطبيقات Cross Platform",
+        "إشعارات فورية",
+        "أنظمة المصادقة والحماية",
+        "لوحة تحكم خلفية"
+      ],
+      "button": "ابدأ هذه الخدمة"
+    },
+    "wordpressDevelopment": {
+      "title": "مواقع WordPress",
+      "description": "مواقع WordPress احترافية سريعة وسهلة الإدارة",
+      "features": [
+        "مواقع شركات ومؤسسات",
+        "صفحات هبوط Landing Pages",
+        "تحكم كامل بالمحتوى",
+        "تحسين الأداء والسرعة"
+      ],
+      "button": "ابدأ هذه الخدمة"
+    }
+  },
+  "portfolioPage": {
+    "title": "أعمال Sirbit",
+    "description": "استكشف مجموعة من مشاريعنا الناجحة",
+    "filters": {
+      "all": "الكل",
+      "web": "مواقع ويب",
+      "mobile": "موبايل",
+      "wordpress": "WordPress"
+    }
+  },
+  "aboutPage": {
+    "title": "من نحن",
+    "description": "Sirbit فريق تقني شغوف ببناء حلول رقمية تحدث فرقًا حقيقيًا",
+    "vision": {
+      "title": "رؤيتنا",
+      "description": "أن نكون الخيار الأول للشركات التي تسعى للتميز الرقمي"
+    },
+    "mission": {
+      "title": "رسالتنا",
+      "description": "تقديم حلول تقنية مبتكرة تساعد عملائنا على النمو والتطور"
+    },
+    "values": {
+      "title": "قيمنا",
+      "description": "الجودة، الابتكار، والشفافية في كل ما نقوم به"
+    },
+    "howWeWork": {
+      "title": "طريقة عملنا",
+      "discovery": "الاستكشاف",
+      "analysis": "التحليل",
+      "design": "التصميم",
+      "development": "التطوير",
+      "testing": "الاختبار",
+      "delivery": "التسليم والدعم"
+    }
+  },
+  "contactPage": {
+    "title": "دعنا نبدأ مشروعك القادم",
+    "description": "نرد خلال 24 ساعة",
+    "form": {
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "phone": "رقم الجوال",
+      "serviceType": "نوع الخدمة",
+      "budget": "الميزانية (اختياري)",
+      "message": "وصف المشروع",
+      "submit": "إرسال"
+    },
+    "info": {
+      "email": "البريد الإلكتروني",
+      "whatsapp": "واتساب",
+      "location": "الموقع"
+    }
+  }
+}
+

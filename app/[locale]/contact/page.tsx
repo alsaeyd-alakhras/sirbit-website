@@ -29,6 +29,15 @@ export default function ContactPage() {
           </div>
         </Container>
       </section>
+
+      {/* SEO text section to avoid thin content */}
+      <section className="pb-16">
+        <Container>
+          <p className="max-w-3xl mx-auto text-gray-600 dark:text-gray-400 leading-relaxed text-base md:text-lg">
+            {t('seoBody')}
+          </p>
+        </Container>
+      </section>
     </>
   );
 }

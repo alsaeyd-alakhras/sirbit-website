@@ -7,25 +7,35 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, slug } = params;
 
-  const baseTitle =
-    slug === 'project-1'
-      ? 'Advanced Management System'
-      : slug === 'project-2'
-      ? 'E-Commerce Mobile App'
-      : slug === 'project-3'
-      ? 'Corporate Website Project'
-      : slug === 'project-4'
-      ? 'Learning Platform'
-      : slug === 'project-5'
-      ? 'Delivery Application'
-      : slug === 'project-6'
-      ? 'Personal Blog'
-      : 'Project';
-
-  const title = locale === 'ar' ? `${baseTitle} | Case Study`.replace(
-    'Advanced Management System',
-    'دراسة حالة: نظام إدارة متقدم'
-  ) : `${baseTitle} | Case Study`;
+  const titles: Record<
+    string,
+    { en: string; ar: string }
+  > = {
+    'project-1': {
+      en: 'Advanced Management System | Case Study',
+      ar: 'دراسة حالة: نظام إدارة متقدم',
+    },
+    'project-2': {
+      en: 'E-Commerce Mobile App | Case Study',
+      ar: 'دراسة حالة: تطبيق موبايل تجاري',
+    },
+    'project-3': {
+      en: 'Corporate Website Project | Case Study',
+      ar: 'دراسة حالة: موقع شركة احترافي',
+    },
+    'project-4': {
+      en: 'Learning Platform | Case Study',
+      ar: 'دراسة حالة: منصة تعليمية',
+    },
+    'project-5': {
+      en: 'Delivery Application | Case Study',
+      ar: 'دراسة حالة: تطبيق توصيل',
+    },
+    'project-6': {
+      en: 'Personal Blog | Case Study',
+      ar: 'دراسة حالة: مدونة شخصية',
+    },
+  };
 
   const description =
     slug === 'project-1'
@@ -42,8 +52,16 @@ export async function generateMetadata({
       ? 'Case study for a fast personal blog built with WordPress and optimized for content creators.'
       : 'Case study by Sirbit for a custom digital project.';
 
+  const localizedTitle = titles[slug]
+    ? locale === 'ar'
+      ? titles[slug].ar
+      : titles[slug].en
+    : locale === 'ar'
+    ? 'دراسة حالة: مشروع'
+    : 'Project | Case Study';
+
   return {
-    title,
+    title: localizedTitle,
     description,
     alternates: {
       canonical: `/${locale}/portfolio/${slug}`,

@@ -68,6 +68,7 @@
   "servicesPage": {
     "title": "Our Services",
     "description": "We provide a comprehensive range of technical services to achieve your digital vision",
+    "seoBody": "Sirbit offers end-to-end web, mobile, and WordPress development services tailored to the stage of your business. We help founders validate ideas with fast MVPs, support growing companies with scalable platforms, and modernise existing systems that are slow or hard to maintain. Our team focuses on clean architecture, performance, and long-term maintainability so every new feature can be added with confidence rather than fear of breaking things.",
     "webDevelopment": {
       "title": "Web Development & Systems",
       "description": "We build advanced web solutions using the latest technologies and frameworks",
@@ -104,7 +105,8 @@
   },
   "portfolioPage": {
     "title": "Sirbit Portfolio",
-    "description": "Explore our successful projects",
+    "description": "Explore a curated selection of Sirbit’s successful web, mobile, and WordPress projects delivered for startups and growing companies.",
+    "seoBody": "In our portfolio you will find real-world examples of how Sirbit helped clients launch new products, improve existing platforms, and grow their online presence. Each project highlights a specific challenge, the technology stack we used, and the business outcomes achieved such as higher conversions, better performance, or easier content management. This gives you a clear idea of what working with Sirbit looks like before you start your own project.",
     "filters": {
       "all": "All",
       "web": "Web",
@@ -114,7 +116,8 @@
   },
   "aboutPage": {
     "title": "About Us",
-    "description": "Sirbit is a passionate technical team building digital solutions that make a real difference",
+    "description": "Sirbit is a passionate technical team that designs and builds modern web and mobile solutions, focusing on performance, clean code, and measurable business impact.",
+    "seoBody": "Behind Sirbit there is a small but focused team of engineers and designers who care about details and long-term partnerships, not just delivering code quickly. We combine experience with Laravel, Next.js, Flutter, and WordPress to choose the right tool for each project instead of forcing one stack on every client. Our work process is transparent: we start with discovery, move into design and development, then stay with you after launch to iterate and improve based on real user feedback.",
     "vision": {
       "title": "Our Vision",
       "description": "To be the first choice for companies seeking digital excellence"
@@ -139,7 +142,8 @@
   },
   "contactPage": {
     "title": "Let's Start Your Next Project",
-    "description": "We respond within 24 hours",
+    "description": "Tell us about your web or mobile project, budget, and timeline and the Sirbit team will review your request and respond with a clear next step within 24 hours.",
+    "seoBody": "Use this contact page to share a short brief about your idea, current challenges, and what success would look like for you. The more context you provide—such as preferred technologies, launch timeline, or budget range—the easier it is for us to propose a realistic and effective solution. Once we receive your message, we will reply within one business day with clarifying questions or a suggested next step such as a discovery call or a rough project estimate.",
     "form": {
       "name": "Name",
       "email": "Email",

@@ -20,6 +20,16 @@ export default function AboutPage() {
 
       <VisionMissionValues />
       <HowWeWork />
+
+       {/* SEO text section to enrich About page */}
+       <section className="pb-12">
+         <Container>
+           <p className="max-w-3xl mx-auto text-gray-600 dark:text-gray-400 leading-relaxed text-base md:text-lg">
+             {t('seoBody')}
+           </p>
+         </Container>
+       </section>
+
       <FinalCTA />
     </>
   );

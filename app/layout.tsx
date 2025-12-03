@@ -12,8 +12,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// نقطة واحدة لتغيير الدومين بالكامل
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://sirbit-website.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sirbit-website.vercel.app"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Sirbit – Digital Software Solutions Agency",
     template: "%s | Sirbit",

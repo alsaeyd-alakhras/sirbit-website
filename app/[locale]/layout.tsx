@@ -5,6 +5,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import type { Metadata } from 'next';
 import "../globals.css";
 
 const geistSans = Geist({
@@ -21,6 +22,20 @@ const locales = ['ar', 'en'];
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    alternates: {
+      canonical: `/${locale}`,
+    },
+  };
 }
 
 export default async function LocaleLayout({

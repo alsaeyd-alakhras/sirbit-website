@@ -14,7 +14,7 @@ export default function AboutPage() {
     <>
       <section className="pt-32 pb-12">
         <Container>
-          <SectionHeader title={t('title')} subtitle={t('description')} />
+          <SectionHeader title={t('title')} subtitle={t('description')} as="h1" />
         </Container>
       </section>
 

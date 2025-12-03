@@ -8,6 +8,7 @@ interface SectionHeaderProps {
   subtitle?: string;
   className?: string;
   centered?: boolean;
+  as?: 'h1' | 'h2' | 'h3';
 }
 
 const SectionHeader: React.FC<SectionHeaderProps> = ({
@@ -15,7 +16,9 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
   subtitle,
   className = '',
   centered = true,
+  as = 'h2',
 }) => {
+  const Tag = as;
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -24,9 +27,9 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
       transition={{ duration: 0.5 }}
       className={`mb-12 ${centered ? 'text-center' : ''} ${className}`}
     >
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-[#00AEEF] to-[#7B61FF] bg-clip-text text-transparent">
+      <Tag className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-[#00AEEF] to-[#7B61FF] bg-clip-text text-transparent">
         {title}
-      </h2>
+      </Tag>
       {subtitle && (
         <p className="text-lg text-gray-700 dark:text-gray-400 max-w-2xl mx-auto">
           {subtitle}

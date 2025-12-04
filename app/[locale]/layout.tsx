@@ -7,6 +7,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import type { Metadata } from 'next';
 import "../globals.css";
+import CanonicalTag from '@/components/layout/CanonicalTag';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,18 +26,20 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params,
+   params, 
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://sirbit-website.vercel.app";
 
   return {
     alternates: {
-      canonical: `/${locale}`,
+      canonical: `${siteUrl}/${locale}`,
     },
   };
 }
+
 
 export default async function LocaleLayout({
   children,
@@ -58,6 +61,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={direction} suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <CanonicalTag />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

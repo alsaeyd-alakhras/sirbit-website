@@ -14,6 +14,7 @@ interface ServiceDetailBlockProps {
   features: string[];
   buttonText: string;
   imagePosition?: 'left' | 'right';
+  serviceType?: string; // Service type to pre-fill in contact form
 }
 
 const ServiceDetailBlock: React.FC<ServiceDetailBlockProps> = ({
@@ -23,8 +24,14 @@ const ServiceDetailBlock: React.FC<ServiceDetailBlockProps> = ({
   features,
   buttonText,
   imagePosition = 'right',
+  serviceType,
 }) => {
   const locale = useLocale();
+
+  // Build contact URL with service type query parameter
+  const contactUrl = serviceType
+    ? `/${locale}/contact?service=${encodeURIComponent(serviceType)}`
+    : `/${locale}/contact`;
 
   return (
     <section className="py-16 odd:bg-gray-50 odd:dark:bg-[#0E0F11]">
@@ -66,7 +73,7 @@ const ServiceDetailBlock: React.FC<ServiceDetailBlockProps> = ({
               ))}
             </ul>
 
-            <Button href={`/${locale}/contact`} variant="primary">
+            <Button href={contactUrl} variant="primary">
               {buttonText}
             </Button>
           </motion.div>

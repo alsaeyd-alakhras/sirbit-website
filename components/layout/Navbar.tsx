@@ -7,6 +7,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
+import { getNavLinks } from '@/data/nav';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,13 +27,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { href: `/${locale}`, label: t('home') },
-    { href: `/${locale}/services`, label: t('services') },
-    { href: `/${locale}/portfolio`, label: t('portfolio') },
-    { href: `/${locale}/about`, label: t('about') },
-    { href: `/${locale}/contact`, label: t('contact') },
-  ];
+  const navLinks = getNavLinks(locale);
 
   const toggleLanguage = () => {
     const newLocale = locale === 'ar' ? 'en' : 'ar';
@@ -46,21 +41,19 @@ const Navbar = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className={`fixed top-5 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
-          isScrolled ? 'w-[85%]' : 'w-[90%]'
-        } max-w-6xl`}
+        className={`fixed top-5 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${isScrolled ? 'w-[85%]' : 'w-[90%]'
+          } max-w-6xl`}
       >
         <div
-          className={`glass bg-white/70 dark:bg-black/50 backdrop-blur-xl rounded-[40px] px-6 py-4 shadow-lg border border-gray-200/20 dark:border-gray-800/20 ${
-            isScrolled ? 'shadow-2xl' : ''
-          }`}
+          className={`glass bg-white/70 dark:bg-black/50 backdrop-blur-xl rounded-[40px] px-6 py-4 shadow-lg border border-gray-200/20 dark:border-gray-800/20 ${isScrolled ? 'shadow-2xl' : ''
+            }`}
         >
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href={`/${locale}`} className="flex items-center gap-2">
-              <img 
-                src="/images/logo.png" 
-                alt="Sirbit" 
+              <img
+                src="/images/logo.png"
+                alt="Sirbit"
                 className="h-10 w-auto"
               />
             </Link>
@@ -71,13 +64,12 @@ const Navbar = () => {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-[#00AEEF] dark:hover:text-[#7B61FF] relative ${
-                    pathname === link.href
-                      ? 'text-[#00AEEF] dark:text-[#7B61FF]'
-                      : 'text-gray-700 dark:text-gray-300'
-                  }`}
+                  className={`text-sm font-medium transition-colors hover:text-[#00AEEF] dark:hover:text-[#7B61FF] relative ${pathname === link.href
+                    ? 'text-[#00AEEF] dark:text-[#7B61FF]'
+                    : 'text-gray-700 dark:text-gray-300'
+                    }`}
                 >
-                  {link.label}
+                  {t(link.labelKey.replace('nav.', ''))}
                   {pathname === link.href && (
                     <motion.div
                       layoutId="navbar-indicator"
@@ -148,9 +140,8 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: locale === 'ar' ? 300 : -300 }}
               transition={{ type: 'spring', damping: 25 }}
-              className={`absolute top-0 ${
-                locale === 'ar' ? 'right-0' : 'left-0'
-              } h-full w-72 bg-white dark:bg-[#1A1C1F] shadow-2xl p-8`}
+              className={`absolute top-0 ${locale === 'ar' ? 'right-0' : 'left-0'
+                } h-full w-72 bg-white dark:bg-[#1A1C1F] shadow-2xl p-8`}
             >
               <div className="flex flex-col gap-6">
                 {navLinks.map((link) => (
@@ -158,13 +149,12 @@ const Navbar = () => {
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`text-lg font-medium transition-colors ${
-                      pathname === link.href
-                        ? 'text-[#00AEEF] dark:text-[#7B61FF]'
-                        : 'text-gray-700 dark:text-gray-300'
-                    }`}
+                    className={`text-lg font-medium transition-colors ${pathname === link.href
+                      ? 'text-[#00AEEF] dark:text-[#7B61FF]'
+                      : 'text-gray-700 dark:text-gray-300'
+                      }`}
                   >
-                    {link.label}
+                    {t(link.labelKey.replace('nav.', ''))}
                   </Link>
                 ))}
               </div>

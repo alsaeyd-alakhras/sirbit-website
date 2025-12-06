@@ -1,15 +1,19 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
+import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Send, Loader2 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import Button from '@/components/ui/Button';
+import { siteConfig } from '@/config/site';
 
 const ContactForm = () => {
   const t = useTranslations('contactPage.form');
   const locale = useLocale();
+  const searchParams = useSearchParams();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,6 +24,14 @@ const ContactForm = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  // Pre-fill service type from URL query parameter
+  useEffect(() => {
+    const service = searchParams.get('service');
+    if (service) {
+      setFormData(prev => ({ ...prev, serviceType: service }));
+    }
+  }, [searchParams]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -54,15 +66,15 @@ ${formData.message}
 
       // إرسال البريد عبر EmailJS
       await emailjs.send(
-        'service_hzg0z3d',      // Service ID من EmailJS
-        'template_n6h2ywe',     // Template ID من EmailJS
+        siteConfig.emailjs.serviceId,
+        siteConfig.emailjs.templateId,
         {
           from_name: formData.name,
           from_email: formData.email,
           to_name: 'Sirbit Team',
           message: fullMessage,
         },
-        'ipjMTzXdSc8FvThXj'      // Public Key من EmailJS
+        siteConfig.emailjs.publicKey
       );
 
       setSubmitStatus('success');
@@ -83,7 +95,7 @@ ${formData.message}
     } catch (error) {
       console.error('Failed to send email:', error);
       setSubmitStatus('error');
-      
+
       // إخفاء رسالة الخطأ بعد 5 ثواني
       setTimeout(() => {
         setSubmitStatus('idle');
@@ -165,17 +177,14 @@ ${formData.message}
             <option value="">
               {locale === 'ar' ? 'اختر نوع الخدمة' : 'Select a service'}
             </option>
-            <option value={locale === 'ar' ? 'تطوير مواقع ويب' : 'Web Development'}>
+            <option value="web">
               {locale === 'ar' ? 'تطوير مواقع ويب' : 'Web Development'}
             </option>
-            <option value={locale === 'ar' ? 'تطوير تطبيقات موبايل' : 'Mobile Development'}>
-              {locale === 'ar' ? 'تطوير تطبيقات موبايل' : 'Mobile Development'}
+            <option value="mobile">
+              {locale === 'ar' ? 'تطبيقات موبايل' : 'Mobile Apps'}
             </option>
-            <option value="WordPress">
-              WordPress
-            </option>
-            <option value={locale === 'ar' ? 'أخرى' : 'Other'}>
-              {locale === 'ar' ? 'أخرى' : 'Other'}
+            <option value="wordpress">
+              {locale === 'ar' ? 'مواقع WordPress' : 'WordPress Sites'}
             </option>
           </select>
         </div>
@@ -211,15 +220,15 @@ ${formData.message}
           />
         </div>
 
-        <Button 
-          type="submit" 
-          variant="primary" 
-          icon={isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />} 
+        <Button
+          type="submit"
+          variant="primary"
+          icon={isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />}
           className="w-full"
           disabled={isSubmitting}
         >
-          {isSubmitting 
-            ? (locale === 'ar' ? 'جاري الإرسال...' : 'Sending...') 
+          {isSubmitting
+            ? (locale === 'ar' ? 'جاري الإرسال...' : 'Sending...')
             : t('submit')
           }
         </Button>
@@ -232,8 +241,8 @@ ${formData.message}
             className="p-4 rounded-lg bg-green-100 dark:bg-green-900/30 border border-green-500 dark:border-green-500"
           >
             <p className="text-green-800 dark:text-green-300 text-center font-medium">
-              {locale === 'ar' 
-                ? '✅ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.' 
+              {locale === 'ar'
+                ? '✅ تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.'
                 : '✅ Message sent successfully! We will contact you soon.'
               }
             </p>
@@ -248,8 +257,8 @@ ${formData.message}
             className="p-4 rounded-lg bg-red-100 dark:bg-red-900/30 border border-red-500 dark:border-red-500"
           >
             <p className="text-red-800 dark:text-red-300 text-center font-medium">
-              {locale === 'ar' 
-                ? '❌ فشل إرسال الرسالة. يرجى المحاولة مرة أخرى.' 
+              {locale === 'ar'
+                ? '❌ فشل إرسال الرسالة. يرجى المحاولة مرة أخرى.'
                 : '❌ Failed to send message. Please try again.'
               }
             </p>

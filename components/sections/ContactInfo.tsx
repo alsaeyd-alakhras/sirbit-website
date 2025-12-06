@@ -4,6 +4,7 @@ import React from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Mail, MessageCircle, MapPin } from 'lucide-react';
+import { contactInfo, getWhatsAppLink } from '@/data/contact';
 
 const ContactInfo = () => {
   const t = useTranslations('contactPage.info');
@@ -13,19 +14,19 @@ const ContactInfo = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: t('email'),
-      value: 'info@sirbit.com',
-      href: 'mailto:info@sirbit.com',
+      value: contactInfo.email,
+      href: `mailto:${contactInfo.email}`,
     },
     {
       icon: <MessageCircle className="w-6 h-6" />,
       title: t('whatsapp'),
-      value: '+970 59 123 4567',
-      href: 'https://wa.me/970591234567',
+      value: contactInfo.whatsapp,
+      href: getWhatsAppLink(),
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: t('location'),
-      value: locale === 'ar' ? 'فلسطين - نعمل عن بعد عالميًا' : 'Palestine - Working Remotely Worldwide',
+      value: locale === 'ar' ? contactInfo.location.ar : contactInfo.location.en,
       href: null,
     },
   ];

@@ -158,6 +158,27 @@
       "whatsapp": "WhatsApp",
       "location": "Location"
     }
+  },
+  "seo": {
+    "home": {
+      "title": "Sirbit - Professional Web & Mobile Development | Laravel, Vue, React, Flutter",
+      "description": "Sirbit is a technical team specialized in building professional websites and mobile apps using Laravel, Vue.js, React, Flutter, WordPress. Integrated digital solutions for your project."
+    },
+    "services": {
+      "title": "Our Services - Web & Mobile Development | Sirbit",
+      "description": "We offer web development, Flutter mobile apps, and professional WordPress sites. Integrated technical solutions with the highest quality and performance standards."
+    },
+    "portfolio": {
+      "title": "Our Work - Successful Web & Mobile Projects | Sirbit",
+      "description": "Explore our successful projects in web development, mobile apps, and WordPress systems. See how we helped our clients succeed."
+    },
+    "about": {
+      "title": "About Us - Sirbit Technical Development Team",
+      "description": "Learn about Sirbit team, passionate about building innovative digital solutions. Our vision, mission, and approach to developing digital projects."
+    },
+    "contact": {
+      "title": "Contact Us - Start Your Project with Sirbit",
+      "description": "Contact Sirbit team to start your digital project. We respond within 24 hours. Get a free consultation for your project."
+    }
   }
 }
-

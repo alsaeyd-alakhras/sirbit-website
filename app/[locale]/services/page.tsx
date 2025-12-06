@@ -22,8 +22,8 @@ export default function ServicesPage() {
       <div id="web-development">
         <ServiceDetailBlock
           icon={
-            <Image 
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=800&fit=crop" 
+            <Image
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=800&fit=crop"
               alt="Web Development"
               width={800}
               height={800}
@@ -39,14 +39,15 @@ export default function ServicesPage() {
           ]}
           buttonText={t('webDevelopment.button')}
           imagePosition="right"
+          serviceType="web"
         />
       </div>
 
       <div id="mobile-development">
         <ServiceDetailBlock
           icon={
-            <Image 
-              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=800&fit=crop" 
+            <Image
+              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=800&fit=crop"
               alt="Mobile Development"
               width={800}
               height={800}
@@ -62,14 +63,15 @@ export default function ServicesPage() {
           ]}
           buttonText={t('mobileDevelopment.button')}
           imagePosition="left"
+          serviceType="mobile"
         />
       </div>
 
       <div id="wordpress-development">
         <ServiceDetailBlock
           icon={
-            <Image 
-              src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&h=800&fit=crop" 
+            <Image
+              src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&h=800&fit=crop"
               alt="WordPress Development"
               width={800}
               height={800}
@@ -85,6 +87,7 @@ export default function ServicesPage() {
           ]}
           buttonText={t('wordpressDevelopment.button')}
           imagePosition="right"
+          serviceType="wordpress"
         />
       </div>
 

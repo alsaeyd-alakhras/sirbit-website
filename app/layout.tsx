@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    url: "https://sirbit-website.vercel.app",
+    url: siteUrl,
     title: "Sirbit – Digital Software Solutions Agency",
     description:
       "We help startups and companies build modern web & mobile experiences with Laravel, Next.js and cloud-native architectures.",

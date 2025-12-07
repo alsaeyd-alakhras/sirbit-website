@@ -1,6 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
+  output: 'public',
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL,
   generateRobotsTxt: true,
   sitemapSize: 5000,
@@ -42,6 +43,16 @@ module.exports = {
 
       { loc: '/ar/portfolio', changefreq: 'monthly', priority: 0.9 },
       { loc: '/en/portfolio', changefreq: 'monthly', priority: 0.9 },
+    ];
+  },
+  async redirects() {
+    return [
+      {
+        source: '/sitemap.xml',
+        has: [{ type: 'host', value: '(.*)' }],
+        destination: 'https://sirbit-website.vercel.app/sitemap.xml',
+        permanent: true,
+      },
     ];
   },
 };

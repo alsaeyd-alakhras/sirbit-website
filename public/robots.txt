@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://sirbit.com
+Host: https://sirbit-website.vercel.app
 
 # Sitemaps
-Sitemap: https://sirbit.com/sitemap.xml
+Sitemap: https://sirbit-website.vercel.app/sitemap.xml

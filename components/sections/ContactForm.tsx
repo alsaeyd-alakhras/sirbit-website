@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Send, Loader2 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
@@ -13,6 +13,7 @@ const ContactForm = () => {
   const t = useTranslations('contactPage.form');
   const locale = useLocale();
   const searchParams = useSearchParams();
+  const router = useRouter();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -25,13 +26,32 @@ const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  // Pre-fill service type from URL query parameter
+  // Pre-fill service type from URL (hash fragment or query parameter for backward compatibility)
+  // Then remove query parameter to avoid SEO issues
   useEffect(() => {
-    const service = searchParams.get('service');
+    // First check hash fragment (preferred method)
+    const hash = window.location.hash;
+    let service: string | null = null;
+    
+    if (hash && hash.startsWith('#service=')) {
+      service = hash.replace('#service=', '');
+    } else {
+      // Fallback to query parameter for backward compatibility
+      service = searchParams.get('service');
+      // Remove query parameter from URL to avoid SEO issues
+      // Keep hash fragment if it exists
+      if (service) {
+        const url = new URL(window.location.href);
+        url.searchParams.delete('service');
+        const newUrl = url.pathname + url.search + (url.hash || '');
+        router.replace(newUrl, { scroll: false });
+      }
+    }
+    
     if (service) {
       setFormData(prev => ({ ...prev, serviceType: service }));
     }
-  }, [searchParams]);
+  }, [searchParams, router]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({

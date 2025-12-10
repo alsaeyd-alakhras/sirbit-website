@@ -28,9 +28,10 @@ const ServiceDetailBlock: React.FC<ServiceDetailBlockProps> = ({
 }) => {
   const locale = useLocale();
 
-  // Build contact URL with service type query parameter
+  // Build contact URL with service type as hash fragment (better for SEO)
+  // Hash fragments don't create separate pages for search engines
   const contactUrl = serviceType
-    ? `/${locale}/contact?service=${encodeURIComponent(serviceType)}`
+    ? `/${locale}/contact#service=${encodeURIComponent(serviceType)}`
     : `/${locale}/contact`;
 
   return (

@@ -35,6 +35,18 @@ export async function generateMetadata(
     alternates: {
       canonical: `/${locale}/contact`,
     },
+    robots: {
+      index: true,
+      follow: true,
+      // Don't index URLs with query parameters to avoid duplicate content
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
   };
 }
 

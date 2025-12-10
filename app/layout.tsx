@@ -25,10 +25,10 @@ export const metadata: Metadata = {
   description:
     "Sirbit is a software agency that builds faster, smarter and scalable digital products using Laravel, Next.js, mobile apps and cloud technologies.",
   alternates: {
-    canonical: "/",
+    canonical: siteUrl + "/",
     languages: {
-      en: "/en",
-      ar: "/ar",
+      en: siteUrl + "/en",
+      ar: siteUrl + "/ar",
     },
   },
   openGraph: {

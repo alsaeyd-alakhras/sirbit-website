@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://sirbit-website.vercel.app";
+
+  
 export async function generateMetadata({
   params,
 }: {
@@ -13,7 +17,7 @@ export async function generateMetadata({
     title: t('title'),
     description: t('description'),
     alternates: {
-      canonical: `/${locale}/about`,
+      canonical: siteUrl + `/${locale}/about`,
     },
   };
 }

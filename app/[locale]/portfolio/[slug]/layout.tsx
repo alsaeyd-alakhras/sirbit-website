@@ -4,6 +4,10 @@ import type { Metadata } from 'next';
 const locales = ['en', 'ar'] as const;
 const slugs = ['project-1', 'project-2', 'project-3', 'project-4', 'project-5', 'project-6'] as const;
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://sirbit-website.vercel.app";
+
+
 export function generateStaticParams() {
   return locales.flatMap((locale) =>
     slugs.map((slug) => ({
@@ -77,7 +81,7 @@ export async function generateMetadata({
     title: localizedTitle,
     description,
     alternates: {
-      canonical: `/${locale}/portfolio/${slug}`,
+      canonical: siteUrl + `/${locale}/portfolio/${slug}`,
     },
   };
 }

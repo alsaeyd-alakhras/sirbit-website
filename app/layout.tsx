@@ -24,13 +24,6 @@ export const metadata: Metadata = {
   },
   description:
     "Sirbit is a software agency that builds faster, smarter and scalable digital products using Laravel, Next.js, mobile apps and cloud technologies.",
-  alternates: {
-    canonical: siteUrl + "/",
-    languages: {
-      en: siteUrl + "/en",
-      ar: siteUrl + "/ar",
-    },
-  },
   openGraph: {
     type: "website",
     url: siteUrl,

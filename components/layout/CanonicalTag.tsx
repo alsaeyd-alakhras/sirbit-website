@@ -1,18 +1,13 @@
-"use client";
+import { headers } from "next/headers";
 
-import { usePathname } from "next/navigation";
-import Head from "next/head";
+export default async function CanonicalTag() {
+  const headersList = await headers(); // IMPORTANT FIX
 
-export default function CanonicalTag() {
-  const pathname = usePathname();
-  const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://sirbit-website.vercel.app";
+  const host = headersList.get("host");
+  const protocol = headersList.get("x-forwarded-proto") ?? "https";
+  const pathname = headersList.get("x-invoke-path") || "";
 
-  const canonicalUrl = `${baseUrl}${pathname}`;
+  const canonicalUrl = `${protocol}://${host}${pathname}`;
 
-  return (
-    <Head>
-      <link rel="canonical" href={canonicalUrl} />
-    </Head>
-  );
+  return <link rel="canonical" href={canonicalUrl} />;
 }

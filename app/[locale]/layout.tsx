@@ -107,6 +107,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={direction} suppressHydrationWarning>
       <head>
+        <CanonicalTag />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={renderJsonLd(getOrganizationSchema())}
@@ -117,7 +118,6 @@ export default async function LocaleLayout({
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <CanonicalTag />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

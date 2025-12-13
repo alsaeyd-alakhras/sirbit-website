@@ -45,6 +45,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       
       <Link
         href={href}
+        aria-label={`${linkText} about ${title}`}
         className="inline-flex items-center gap-2 text-[#00AEEF] dark:text-[#7B61FF] font-semibold group-hover:gap-3 transition-all"
       >
         {linkText}

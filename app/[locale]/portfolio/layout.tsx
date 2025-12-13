@@ -7,16 +7,22 @@ const siteUrl =
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const { locale } = params;
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'portfolioPage' });
+  const path = "/portfolio";
+  const canonicalUrl = `${siteUrl}/${locale}${path}`;
 
   return {
     title: t('title'),
     description: t('description'),
     alternates: {
-      canonical: siteUrl + `/${locale}/portfolio`,
+      canonical: canonicalUrl,
+      languages: {
+        'ar': `${siteUrl}/ar${path}`,
+        'en': `${siteUrl}/en${path}`,
+      },
     },
   };
 }

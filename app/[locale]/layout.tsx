@@ -7,7 +7,6 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import type { Metadata } from 'next';
 import "../globals.css";
-import CanonicalTag from '@/components/layout/CanonicalTag';
 import { siteConfig, getFullUrl } from '@/config/site';
 import { getOrganizationSchema, getWebSiteSchema, renderJsonLd } from '@/lib/schema';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
@@ -35,7 +34,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'seo' });
-  const fullUrl = getFullUrl(`/${locale}`);
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://sirbit-website.vercel.app";
+  const path = "";
+  const fullUrl = `${siteUrl}/${locale}${path}`;
 
   return {
     title: {
@@ -68,8 +69,8 @@ export async function generateMetadata({
     alternates: {
       canonical: fullUrl,
       languages: {
-        'ar': getFullUrl('/ar'),
-        'en': getFullUrl('/en'),
+        'ar': `${siteUrl}/ar${path}`,
+        'en': `${siteUrl}/en${path}`,
       },
     },
     robots: {
@@ -107,7 +108,6 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={direction} suppressHydrationWarning>
       <head>
-        <CanonicalTag />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={renderJsonLd(getOrganizationSchema())}

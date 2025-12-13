@@ -23,6 +23,8 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
+  const path = `/portfolio/${slug}`;
+  const canonicalUrl = `${siteUrl}/${locale}${path}`;
 
   const titles: Record<
     string,
@@ -81,7 +83,11 @@ export async function generateMetadata({
     title: localizedTitle,
     description,
     alternates: {
-      canonical: siteUrl + `/${locale}/portfolio/${slug}`,
+      canonical: canonicalUrl,
+      languages: {
+        'ar': `${siteUrl}/ar${path}`,
+        'en': `${siteUrl}/en${path}`,
+      },
     },
   };
 }

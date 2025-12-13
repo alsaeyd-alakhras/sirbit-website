@@ -29,11 +29,19 @@ export async function generateMetadata(
     else serviceTitle = service;
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://sirbit-website.vercel.app";
+  const path = "/contact";
+  const canonicalUrl = `${siteUrl}/${locale}${path}`;
+
   return {
     title: t('title') + (serviceTitle ? ` - ${serviceTitle}` : ''),
     description: t('description') + (serviceTitle ? ` - ${serviceTitle}` : ''),
     alternates: {
-      canonical: `/${locale}/contact`,
+      canonical: canonicalUrl,
+      languages: {
+        'ar': `${siteUrl}/ar${path}`,
+        'en': `${siteUrl}/en${path}`,
+      },
     },
     robots: {
       index: true,
